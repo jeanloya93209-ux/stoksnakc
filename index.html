@@ -1,0 +1,138 @@
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Inventario Snak Central</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        if (!localStorage.getItem("usuarioSnak")) {
+            window.location.replace("login.html");
+        }
+    </script>
+</head>
+
+<body>
+
+    <header class="encabezado">
+        <div class="logo">
+            <img src="Snackcentral1.png" alt="Logo Snak Central">
+        </div>
+
+        <h1>Inventario Snak Central</h1>
+        <p>Sistema de control de inventario</p>
+    </header>
+
+    <main>
+
+        <div class="botones">
+
+            <button type="button" onclick="mostrarTodo()">
+                Mostrar todo
+            </button>
+
+            <button type="button" onclick="mostrarBajoStock()">
+                Stock menor o igual a 10
+            </button>
+
+            <button type="button" onclick="mostrarStockAlto()">
+                Stock mayor a 20
+            </button>
+
+            <button type="button" onclick="mostrarPrecioMayor()">
+                Precio mayor a $20
+            </button>
+
+            <button type="button" onclick="mostrarPrecioMenor()">
+                Precio menor a $20
+            </button>
+
+            <button
+                type="button"
+                id="btnAgregarProducto"
+                onclick="abrirFormulario()">
+                + Agregar producto nuevo
+            </button>
+
+        </div>
+
+        <section id="formularioNuevo" style="display: none;">
+
+            <h2>Agregar producto nuevo</h2>
+
+            <form id="formProducto">
+
+                <label for="nombreProducto">
+                    Nombre del producto:
+                </label>
+
+                <input
+                    type="text"
+                    id="nombreProducto"
+                    placeholder="Ejemplo: Papas"
+                    required
+                >
+
+                <label for="stockProducto">
+                    Cantidad en stock:
+                </label>
+
+                <input
+                    type="number"
+                    id="stockProducto"
+                    min="0"
+                    step="1"
+                    placeholder="Ejemplo: 15"
+                    required
+                >
+
+                <label for="precioProducto">
+                    Precio del producto:
+                </label>
+
+                <input
+                    type="number"
+                    id="precioProducto"
+                    min="0"
+                    step="0.01"
+                    placeholder="Ejemplo: 25.50"
+                    required
+                >
+
+                <button type="submit">
+                    Guardar producto
+                </button>
+
+                <button
+                    type="button"
+                    onclick="cerrarFormulario()">
+                    Cancelar
+                </button>
+
+            </form>
+
+            <p id="mensajeProducto" role="status"></p>
+
+        </section>
+
+        <section id="productos">
+            Cargando productos...
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Snak Central | Sistema de inventario</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+```
+
