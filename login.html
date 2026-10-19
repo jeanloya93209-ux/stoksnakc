@@ -1,0 +1,70 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Iniciar sesión | Snak Central</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <main class="login">
+
+        <img
+            src="Snackcentral1.png"
+            alt="Logo de Snak Central"
+            width="140"
+        >
+
+        <h1>Snak Central</h1>
+        <p>Inicia sesión para continuar</p>
+
+        <form id="formLogin">
+
+            <label for="usuario">Usuario:</label>
+            <input
+                type="text"
+                id="usuario"
+                name="usuario"
+                placeholder="Escribe tu usuario"
+                autocomplete="username"
+                required
+            >
+
+            <label for="contrasena">Contraseña:</label>
+            <input
+                type="password"
+                id="contrasena"
+                name="contrasena"
+                placeholder="Escribe tu contraseña"
+                autocomplete="current-password"
+                required
+            >
+
+            <label for="rol">Tipo de usuario:</label>
+            <select id="rol" name="rol" required>
+                <option value="">Selecciona tu rol</option>
+                <option value="Administrador">Administrador</option>
+                <option value="Almacenista">Almacenista</option>
+                <option value="Cliente">Cliente</option>
+            </select>
+
+            <button type="submit">
+                Iniciar sesión
+            </button>
+
+            <p id="mensaje" role="status"></p>
+
+        </form>
+
+    </main>
+
+    <script src="login.js"></script>
+
+</body>
+</html>
+```
